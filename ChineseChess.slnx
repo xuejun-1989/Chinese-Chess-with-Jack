@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ChineseChess/ChineseChess.vcxproj" Id="4310485b-593d-445b-88c3-701b8d2faf2e" />
+</Solution>
