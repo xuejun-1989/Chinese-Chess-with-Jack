@@ -1,0 +1,22 @@
+# 编译输出
+Debug/
+Release/
+x64/
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.log
+*.tlog
+
+# Visual Studio 缓存
+.vs/
+*.suo
+*.user
+*.sdf
+*.opendb
+*.db
+
+# 临时文件
+*.tmp
+*.swp
