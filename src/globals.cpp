@@ -1,4 +1,4 @@
-// globals.cpp —— 定义所有全局变量
+﻿// globals.cpp —— 定义所有全局变量
 #include "common.h"
 
 ChessPiece board[ROW_NUM][COL_NUM];
@@ -22,6 +22,7 @@ int skill_piece_r = -1, skill_piece_c = -1;
 bool show_jack_form = false;
 int g_shake_strength = 0;
 bool check_sound_played = false;
+
 
 IMAGE img_fog_active, img_fog_disable, img_invis_active, img_invis_disable;
 IMAGE img_jack_fog, img_jack_invis, img_fog_slash;

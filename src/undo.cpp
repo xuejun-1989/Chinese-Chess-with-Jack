@@ -1,4 +1,4 @@
-#include "undo.h"
+﻿#include "undo.h"
 #include "ui_bank.h"   // repaint_all
 #include "game.h"
 

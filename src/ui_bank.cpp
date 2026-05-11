@@ -1,4 +1,4 @@
-#include "ui_bank.h"
+﻿#include "ui_bank.h"
 #include <cmath>
 
 // 模拟软阴影：通过绘制多层深色圆环，实现边缘模糊效果

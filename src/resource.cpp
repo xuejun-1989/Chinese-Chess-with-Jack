@@ -1,4 +1,4 @@
-// resource.cpp
+﻿// resource.cpp
 #include "resource.h"
 
 TCHAR* GetExeDir(TCHAR* buf, size_t size) {

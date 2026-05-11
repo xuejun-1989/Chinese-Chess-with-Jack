@@ -1,4 +1,4 @@
-#include "skill.h"
+﻿#include "skill.h"
 #include "ui_bank.h"   // repaint_all
 #include "game.h"      // play_sound 等
 
@@ -24,7 +24,7 @@ void activate_fog_blade() {
     TCHAR soundPath[512];
     _stprintf_s(soundPath, _T("%sres/sounds/技能释放.mp3"), g_exeDir); // 假设你有这个音效
     play_sound(soundPath);
-    g_shake_strength = 15; // 起手蓄力震动
+    if (game_mode != MODE_AI)g_shake_strength = 15; // 起手蓄力震动
     show_jack_form = true;
 
     // 强制刷新一次，让玩家看到“蓄力”感
@@ -58,7 +58,7 @@ void update_fog_blade() {
         show_jack_form = false;
 
         // 触发强震动反馈 (前面提到的震动功能)
-        g_shake_strength = 20;
+        if (game_mode != MODE_AI)g_shake_strength = 20;
 
         // 记录历史记录 (为了支持悔棋)
         StepRecord rec;
