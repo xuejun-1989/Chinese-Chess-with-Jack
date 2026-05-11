@@ -83,6 +83,7 @@ extern bool show_jack_form;
 extern int g_shake_strength;
 extern bool check_sound_played;
 
+
 extern IMAGE img_fog_active, img_fog_disable, img_invis_active, img_invis_disable;
 extern IMAGE img_jack_fog, img_jack_invis, img_fog_slash;
 extern IMAGE img_hover_mask, img_undo, img_board_bg;

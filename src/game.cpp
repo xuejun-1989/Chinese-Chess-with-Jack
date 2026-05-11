@@ -1,4 +1,4 @@
-#include "game.h"
+﻿#include "game.h"
 
 // ---------- 工具函数实现 ----------
 POINT get_pos(int row, int col) {
@@ -214,11 +214,11 @@ void move_piece(int from_r, int from_c, int to_r, int to_c) {
     g_anim.t = 0;
 
     // --- 新增：根据是否吃子设置震动强度 ---
-    if (board[to_r][to_c].color != CHESS_EMPTY) {
-        g_shake_strength = 12; // 吃子：震动剧烈
-    }
-    else {
-        g_shake_strength = 4;  // 普通落子：轻微震动
+    if (game_mode != MODE_AI) {   // ✅ 人机模式完全禁用震动
+        if (board[to_r][to_c].color != CHESS_EMPTY)
+            g_shake_strength = 12;
+        else
+            g_shake_strength = 4;
     }
     StepRecord rec;
     rec.from_r = from_r; rec.from_c = from_c;

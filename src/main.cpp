@@ -1,4 +1,4 @@
-#include "common.h"
+﻿#include "common.h"
 #include "resource.h"
 #include "game.h"
 #include "ui_bank.h"
