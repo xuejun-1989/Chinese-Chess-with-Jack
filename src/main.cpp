@@ -20,7 +20,7 @@ int main() {
 
         if (g_shake_strength > 0 || g_anim.is_moving || fog_blade.is_flying) {
             if (g_shake_strength > 0) g_shake_strength--; // 【在这里扣减，每圈只减1】
-
+            if (g_undo_effect_strength > 0) g_undo_effect_strength--;
             if (fog_blade.is_flying) update_fog_blade();
 
             need_redraw = true;

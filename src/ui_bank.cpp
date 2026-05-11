@@ -76,6 +76,20 @@ void draw_check_vignette() {
     }
 }
 
+void draw_undo_vignette() {
+    if (g_undo_effect_strength <= 0) return;
+    float pulse = (float)(sin(GetTickCount() / 400.0) * 0.5 + 0.5);
+    int r_val = (int)(60 + pulse * 120);               // 基础亮度
+    for (int i = 0; i < 15; i++) {
+        int layer_r = r_val - (i * 8);
+        if (layer_r < 0) layer_r = 0;
+        // 紫色：红=蓝=layer_r，绿=0（可根据喜好微调）
+        setlinecolor(RGB(layer_r, 0, layer_r));
+        setlinestyle(PS_SOLID, 1);
+        rectangle(i, i, WINDOW_WIDTH - 1 - i, WINDOW_HEIGHT - 1 - i);
+    }
+}
+
 bool is_in_circle_button(int mx, int my, const SkillButton& btn) {
     int cx = btn.x + btn.w / 2, cy = btn.y + btn.h / 2, r = btn.w / 2;
     int dx = mx - cx, dy = my - cy;
@@ -135,7 +149,7 @@ void repaint_all() {
     }
 
     draw_check_vignette();
-    draw_check_vignette();
+    if (g_undo_effect_strength > 0) draw_undo_vignette();
 
     if (g_anim.is_moving) {
         g_anim.t += 0.12f;

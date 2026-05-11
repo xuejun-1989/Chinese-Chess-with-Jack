@@ -32,6 +32,7 @@ void undo_move() {
 
     check_sound_played = false;
     try_play_check_sound();
+    g_undo_effect_strength = 8;  // 持续约 12 帧
     repaint_all();
 }
 

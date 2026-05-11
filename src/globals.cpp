@@ -22,6 +22,7 @@ int skill_piece_r = -1, skill_piece_c = -1;
 bool show_jack_form = false;
 int g_shake_strength = 0;
 bool check_sound_played = false;
+int g_undo_effect_strength = 0;
 
 
 IMAGE img_fog_active, img_fog_disable, img_invis_active, img_invis_disable;

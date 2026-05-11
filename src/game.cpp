@@ -97,16 +97,33 @@ bool is_move_valid(int from_r, int from_c, int to_r, int to_c) {
             if (board[br][bc].color != CHESS_EMPTY) return false;
         }
         return true;
-    case SOLDIER:
+    case SOLDIER: {
+        // 步长不能超过1，且禁止斜走
+        if (dr > 1 || dc > 1) return false;
+        if (dr == 1 && dc == 1) return false;  // 禁止斜走
+        if (dr == 0 && dc == 0) return false;  // 原地不动
+
         if (from.color == CHESS_RED) {
-            if (from_r > 4) { if (to_r >= from_r || dr > 1 || dc > 0) return false; }
-            else { if (dr > 1 || dc > 1) return false; if ((dr == 1 && dc != 0) || (dc == 1 && dr != 0)) if (to_r > from_r) return false; }
+            // 红方：向上是前进
+            if (dr == 1 && dc == 0) {
+                return to_r < from_r;   // 只能前进，不能后退
+            }
+            if (dr == 0 && dc == 1) {
+                return from_r <= 4;     // 只有过河才能横走
+            }
+            return false;
         }
-        else {
-            if (from_r < 5) { if (to_r <= from_r || dr > 1 || dc > 0) return false; }
-            else { if (dr > 1 || dc > 1) return false; if ((dr == 1 && dc != 0) || (dc == 1 && dr != 0)) if (to_r < from_r) return false; }
+        else { // CHESS_BLACK
+            // 黑方：向下是前进
+            if (dr == 1 && dc == 0) {
+                return to_r > from_r;   // 只能前进，不能后退
+            }
+            if (dr == 0 && dc == 1) {
+                return from_r >= 5;     // 只有过河才能横走
+            }
+            return false;
         }
-        return true;
+    }
     default: return false;
     }
 }

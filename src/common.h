@@ -82,6 +82,7 @@ extern int skill_piece_r, skill_piece_c;
 extern bool show_jack_form;
 extern int g_shake_strength;
 extern bool check_sound_played;
+extern int g_undo_effect_strength;  // 悔棋紫色特效剩余帧数
 
 
 extern IMAGE img_fog_active, img_fog_disable, img_invis_active, img_invis_disable;
